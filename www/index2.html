@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Good deal ?</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <div class="form-style-5" id = "form" style="background-color: rgba(255, 255, 255, 0.5)">
+        <h1>What are you looking for ?</h1>
+        <form action = "http://localhost:3000/process_get" method = "GET">
+            <fieldset>
+                <legend><span class="number">1</span> Clothes type :</legend>
+                    <input id="type" name = "type" class="model" type="text" name="field1" placeholder="..."/>
+            </fieldset>
+            <br>
+            <input type="submit" value="Go">
+        </form>
+    </div>
+  </body>
+</html>

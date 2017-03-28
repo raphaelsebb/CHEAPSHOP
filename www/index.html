@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Cheap Shop</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="icon" type="image/png" href="images/logo.png" />
+
+	</head>
+
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="/" class="logo">
+									<span class="symbol"><img src="images/logo.png" alt="" /></span><span class="title">Cheap Shop</span>
+								</a>
+
+						</div>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<header>
+								<h1>Trouvez votre vêtement<br />
+								au prix le plus bas !</h1>
+							</header>
+
+							<section>
+								<form action = "http://localhost:3000/process_get" method = "GET">
+									<div class="row uniform">
+										<div class="4u">
+											<div class="select-wrapper">
+												<select id="sexe" name="sexe">
+													<option value="">- Sexe -</option>
+													<option value="homme">Homme</option>
+													<option value="femme">Femme</option>
+												</select>
+											</div>
+										</div>
+										<div class="6u">
+											<input id = "type" name = "type" placeholder="Vêtement" style = "width:100%"></input>
+										</div>
+										<div class="2u$">
+											<ul class="actions">
+												<li><input type="submit" value="Go !" class="special" /></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+							</section>
+
+							<h2>Asos</h2>
+
+							<section class="tiles">
+
+										<article class="style1" >
+											<span class="image" id="asosImg1">
+												<a href="#" id="asosUrl01" >
+													<img src="images/pic01.jpg" alt="" />
+												</a>
+											</span>
+											<a href="" style="background: url({{url}}) center center">
+												<h2 id="asosPrice01"></h2>
+												<div class="content">
+													<p>Achetez moi !</p>
+												</div>
+											</a>
+										</article>
+
+										<article class="style1" >
+											<span class="image" id="asosImg2">
+												<a href="#" id="asosUrl02" >
+													<img src="images/pic01.jpg" alt="" />
+												</a>
+											</span>
+											<a href="" style="background: url({{url}}) center center">
+												<h2 id="asosPrice02"></h2>
+												<div class="content">
+													<p>Achetez moi !</p>
+												</div>
+											</a>
+										</article>
+
+										<article class="style1" >
+											<span class="image" id="asosImg3">
+												<a href="#" id="asosUrl03" >
+													<img src="images/pic01.jpg" alt="" />
+												</a>
+											</span>
+											<a href="" style="background: url({{url}}) center center">
+												<h2 id="asosPrice03"></h2>
+												<div class="content">
+													<p>Achetez moi !</p>
+												</div>
+											</a>
+										</article>
+
+							</section>
+
+							<hr/>
+							<h2>H & M</h2>
+
+							<section class="tiles">
+
+										<article class="style1" >
+											<span class="image" id="hmImg1">
+												<img src="images/pic01.jpg" alt="" />
+											</span>
+											<a href="" style="background: url({{url}}) center center">
+												<h2 id="hmPrice01"></h2>
+												<div class="content">
+													<p>Achetez moi !</p>
+												</div>
+											</a>
+										</article>
+
+										<article class="style1" >
+											<span class="image" id="hmImg2">
+												<img src="images/pic01.jpg" alt="" />
+											</span>
+											<a href="" style="background: url({{url}}) center center">
+												<h2 id="hmPrice02"></h2>
+												<div class="content">
+													<p>Achetez moi !</p>
+												</div>
+											</a>
+										</article>
+
+										<article class="style1" >
+											<span class="image" id="hmImg3">
+												<img src="images/pic01.jpg" alt="" />
+											</span>
+											<a href="" style="background: url({{url}}) center center">
+												<h2 id="hmPrice03"></h2>
+												<div class="content">
+													<p>Achetez moi !</p>
+												</div>
+											</a>
+										</article>
+
+							</section>
+
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Follow</h2>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="./assets/js/jquery.min.js"></script>
+			<script src="./assets/js/skel.min.js"></script>
+			<script src="./assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="./assets/js/main.js"></script>
+
+			<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+			<script type="text/javascript">
+					$(document).ready(function() {
+							$.getJSON("asosOutput.json", function(result) {
+									var asosUrlPic01 = result.picture1;
+									var asosPrice01 = result.price1;
+									var asosUrlPic02 = result.picture2;
+									var asosPrice02 = result.price2;
+									var asosUrlPic03 = result.picture3;
+									var asosPrice03 = result.price3;
+									var asosUrl01 = result.url1;
+									var asosUrl02 = result.url2;
+									var asosUrl03 = result.url3;
+
+									document.getElementById('asosImg1').innerHTML = '<img src="'+ asosUrlPic01 +'"/>';
+									document.getElementById('asosImg2').innerHTML = '<img src="'+ asosUrlPic02 +'"/>';
+									document.getElementById('asosImg3').innerHTML = '<img src="'+ asosUrlPic03 +'"/>';
+
+									document.getElementById('asosPrice01').innerHTML = asosPrice01;
+									document.getElementById('asosPrice02').innerHTML = asosPrice02;
+									document.getElementById('asosPrice03').innerHTML = asosPrice03;
+
+									document.getElementById('asosUrl01').innerHTML = '<a href="'+asosUrl01+'" id="asosUrl01" >';
+									document.getElementById('asosUrl02').innerHTML = '<a href="'+asosUrl02+'" id="asosUrl02" >';;
+									document.getElementById('asosUrl03').innerHTML = '<a href="'+asosUrl03+'" id="asosUrl03" >';;
+
+
+									console.log(asosPrice02);
+
+							});
+							$.getJSON("HmOutput.json", function(result) {
+									var hmUrlPic01 = result.picture1;
+									var hmPrice01 = result.price1;
+									var hmUrlPic02 = result.picture2;
+									var hmPrice02 = result.price2;
+									var hmUrlPic03 = result.picture3;
+									var hmPrice03 = result.price3;
+
+									document.getElementById('hmImg1').innerHTML = '<img src="'+ hmUrlPic01 +'"/>';
+									document.getElementById('hmImg2').innerHTML = '<img src="'+ hmUrlPic02 +'"/>';
+									document.getElementById('hmImg3').innerHTML = '<img src="'+ hmUrlPic03 +'"/>';
+									document.getElementById('hmPrice01').innerHTML = hmPrice01;
+									document.getElementById('hmPrice02').innerHTML = hmPrice02;
+									document.getElementById('hmPrice03').innerHTML = hmPrice03;
+
+									console.log(hmPrice02);
+							});
+							$.getJSON("newLookOutput.json", function(result) {
+									var newLookUrlPic01 = result.picture1;
+									var newLookPrice01 = result.price1;
+									var newLookUrlPic02 = result.picture2;
+									var newLookPrice02 = result.price2;
+									var newLookUrlPic03 = result.picture3;
+									var newLookPrice03 = result.price3;
+
+									document.getElementById('newLookImg1').innerHTML = '<img src="'+ newLookUrlPic01 +'"/>';
+									document.getElementById('newLookImg2').innerHTML = '<img src="'+ newLookUrlPic02 +'"/>';
+									document.getElementById('newLookImg3').innerHTML = '<img src="'+ newLookUrlPic03 +'"/>';
+									document.getElementById('newLookPrice01').innerHTML = newLookPrice01;
+									document.getElementById('newLookPrice02').innerHTML = newLookPrice02;
+									document.getElementById('newLookPrice03').innerHTML = newLookPrice03;
+
+									console.log(newLookPrice02)
+							});
+
+					});
+
+
+			</script>
+
+	</body>
+</html>
